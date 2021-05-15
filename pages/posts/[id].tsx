@@ -4,6 +4,7 @@ import Layout from "../../components/HomeLayout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
 export default function Post({ postData }) {
+  console.log(postData);
   return (
     <Layout>
       <Head>

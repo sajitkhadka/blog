@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Paragraph } from "../components/CustomElements";
+import { Paragraph, Subtitle, Title } from "../components/CustomElements";
 import Date from "../components/date";
 import HomeLayout from "../components/HomeLayout";
 import { getSortedPostsData } from "../lib/posts";
@@ -18,7 +18,7 @@ export default function Home({ allPostsData }) {
         </Paragraph>
       </section>
       <section>
-        <h2>Recent Posts</h2>
+        <Subtitle>Recent Posts</Subtitle>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id}>
