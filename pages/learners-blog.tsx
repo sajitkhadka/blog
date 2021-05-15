@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Paragraph } from "../components/CustomElements";
 import HomeLayout from "../components/HomeLayout";
-import { getSortedPostsData } from "../lib/posts";
 
 export default function Home({ allPostsData }) {
   return (
@@ -51,13 +50,4 @@ export default function Home({ allPostsData }) {
       </section> */}
     </HomeLayout>
   );
-}
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
 }

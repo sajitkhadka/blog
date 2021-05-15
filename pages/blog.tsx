@@ -1,11 +1,13 @@
+import moment from "moment";
 import Head from "next/head";
 import Link from "next/link";
-import { Paragraph, Subtitle, Title } from "../components/CustomElements";
-import Date from "../components/date";
+import { Paragraph, Subtitle } from "../components/CustomElements";
+// import Date from "../components/date";
+// import Date from "../components/date";
 import HomeLayout from "../components/HomeLayout";
-import { getSortedPostsData } from "../lib/posts";
+import { IPost, POSTS } from "../posts/posts";
 
-export default function Home({ allPostsData }) {
+export default function Home({ posts }: { posts: Array<IPost> }) {
   return (
     <HomeLayout>
       <Head>
@@ -18,17 +20,15 @@ export default function Home({ allPostsData }) {
         </Paragraph>
       </section>
       <section>
-        <Subtitle>Recent Posts</Subtitle>
+        <Subtitle>All Posts</Subtitle>
         <ul>
-          {allPostsData.map(({ id, date, title }) => (
+          {posts.map(({ id, date, heading, slug }) => (
             <li key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
+              <Link href={`/posts/${slug}`}>
+                <a>{heading}</a>
               </Link>
               <br />
-              <small>
-                <Date dateString={date} />
-              </small>
+              <small>{moment(date).calendar()}</small>
             </li>
           ))}
         </ul>
@@ -38,10 +38,9 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData,
+      posts: POSTS,
     },
   };
 }

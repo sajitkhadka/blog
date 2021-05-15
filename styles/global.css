@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Catamaran&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Droid Serif, serif, Lobster, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
-  line-height: 2.5;
-  font-size: 25px;
+  font-family: Raleway, Droid Serif, serif, Lobster, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 2;
+  font-size: 20px;
 }
 
 * {
@@ -16,12 +17,12 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #d13569;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 img {
@@ -36,13 +37,13 @@ h4,
 h5,
 h6 {
   font-family: Catamaran;
-  font-weight: 400;
+  font-weight: 500;
   text-rendering: optimizelegibility;
 }
 
-/* @media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   body {
-    line-height: 1.6;
-    font-size: 14px;
+    line-height: 1.7;
+    font-size: 16px;
   }
-} */
+}

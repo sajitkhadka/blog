@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS } from "../constants";
 
 export const Paragraph = styled.p`
   font-size: 1rem;
@@ -55,4 +56,10 @@ export const Divider = styled.div`
     border-radius: 100px;
     max-width: 90%;
   }
+`;
+
+export const H1 = styled.h1`
+  line-height: 1.5;
+  font-size: 1.2rem;
+  color: ${COLORS.heading};
 `;

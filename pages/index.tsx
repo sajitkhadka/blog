@@ -1,15 +1,17 @@
 import Head from "next/head";
-import Link from "next/link";
 import { Paragraph } from "../components/CustomElements";
-import Date from "../components/date";
 import HomeLayout from "../components/HomeLayout";
-import { getSortedPostsData } from "../lib/posts";
+import { POSTS } from "../posts/posts";
 
 export default function Home({ allPostsData }) {
   return (
     <HomeLayout>
       <Head>
         <title>Sajit Khadka | Personal Blog ~ Home</title>
+        <meta
+          name="description"
+          content="Hi, I am Sajit. This is my personal blog where I share my ideas and experience."
+        />
       </Head>
       <section>
         <Paragraph>
@@ -17,36 +19,18 @@ export default function Home({ allPostsData }) {
           my thoughts.
         </Paragraph>
         <Paragraph>
-          I am a beginner, just starting to understand how things work out in
-          internet; sometimes I wonder if I know anything at all. I created this
-          blog mostly for myself.
+          I am currently working as a full time software developer. In this blog
+          I will try to share my personal ideas and experience. Thanks for
+          reading.
         </Paragraph>
-        <section>
-          <h2>Recent Posts</h2>
-          <ul>
-            {allPostsData.map(({ id, date, title }) => (
-              <li key={id}>
-                <Link href={`/posts/${id}`}>
-                  <a>{title}</a>
-                </Link>
-                <br />
-                <small>
-                  <Date dateString={date} />
-                </small>
-              </li>
-            ))}
-          </ul>
-        </section>
       </section>
     </HomeLayout>
   );
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  // const allPostsData = getSortedPostsData();
   return {
-    props: {
-      allPostsData,
-    },
+    props: { posts: POSTS },
   };
 }

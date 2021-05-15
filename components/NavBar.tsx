@@ -37,8 +37,6 @@ const StyledLink = styled.a`
 const navelements = [
   { path: "/", label: "Home" },
   { path: "/blog", label: "Blog" },
-  { path: "/learners-blog", label: "Learner's Blog" },
-  // { path: "/timeline", label: "Timeline" },
   { path: "/about", label: "About" },
 ];
 export default function NavBar() {
